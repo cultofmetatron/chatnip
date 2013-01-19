@@ -27,6 +27,15 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
+
+io.sockets.on('connection', function(socket) {
+    //the main connnection loop for maintaining persistence
+
+
+});
+
+
+
 // Routes
 
 app.get('/', routes.index);
