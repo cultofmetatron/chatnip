@@ -1,6 +1,8 @@
 chatnip
 =======
 
+NOTE: this app is still under development
+
 socketsio based chatbot
 
 
