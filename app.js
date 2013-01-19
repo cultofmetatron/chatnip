@@ -39,6 +39,10 @@ io.sockets.on('connection', function(socket) {
 // Routes
 
 app.get('/', routes.index);
+app.get('/account/authenticated', routes.account_authenticated);
+
+
+
 
 app.listen(3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

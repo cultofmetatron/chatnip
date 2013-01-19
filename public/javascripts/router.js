@@ -4,8 +4,8 @@
 
 define(['views/index', 'views/register', 'views/login']
     function(IndexView, RegisterView, LoginView) {
-        var SocialRouter = BAckbone.Router.extend({
-            currentview: null,
+        var SocialRouter = Backbone.Router.extend({
+            currentView: null,
 
             routes: {
                 'index':'index',
@@ -15,7 +15,7 @@ define(['views/index', 'views/register', 'views/login']
 
             changeView:function(view) {
                 if (this.currentview != null) {
-                    this.currentview.render();
+                    this.currentview.undelegateEvents();
                 }
                 this.currentview = view;
                 this.currentview.render();
@@ -34,7 +34,7 @@ define(['views/index', 'views/register', 'views/login']
                 this.changeView(new RegisterView());
             }
 
-        })
+        });
 
 
     return new SocialRouter();
