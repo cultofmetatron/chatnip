@@ -13,4 +13,28 @@ html
       }
     script(type='text/javascript', src='/socket.io/socket.io.js')
     script(data-main='javascripts/main', type='text/javascript', src='/javascripts/libs/require.js')
-  body!= body
+  body
+    div.navbar.navbarinverse.navbar-fixed-top
+      div.navbar-inner
+        div.container-fluid
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='#')= title
+    div.container-fluid
+      div.row-fluid
+        div.span3
+          div.well.sidebar-nav
+            ul.nav.nav-list
+            li.nav-header=title
+            li.active
+              a(href='#') link 1
+            li
+              a(href='#') second link
+
+        div.span9
+          div.row-fluid
+          div.span4
+            p here is where the body shall go!!
+            div#chat-console!= body
