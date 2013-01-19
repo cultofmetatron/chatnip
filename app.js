@@ -41,7 +41,10 @@ io.sockets.on('connection', function(socket) {
 app.get('/', routes.index);
 app.get('/account/authenticated', routes.account_authenticated);
 
-
+//registration
+app.post('/register', routes.register);
+//login
+app.post('/login', routes.login);
 
 
 app.listen(3000, function(){

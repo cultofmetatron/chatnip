@@ -1,5 +1,5 @@
 
-define(['text!templates/index.html'], function(indexTemplate)) {
+define(['text!templates/index.html'], function(indexTemplate) {
     var indexView = Backbone.View.extend({
         el:$('#chat-console'),
         render: function() {
@@ -7,6 +7,6 @@ define(['text!templates/index.html'], function(indexTemplate)) {
         }
     });
     return new indexView;
-}
+});
 
 

@@ -2,7 +2,7 @@
 
 
 
-define(['views/index', 'views/register', 'views/login']
+define(['views/index', 'views/register', 'views/login'],
     function(IndexView, RegisterView, LoginView) {
         var SocialRouter = Backbone.Router.extend({
             currentView: null,

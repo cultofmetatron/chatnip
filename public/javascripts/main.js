@@ -6,7 +6,7 @@ require.config({
                jQuery: '/javascripts/libs/jquery',
                Underscore: '/javascripts/libs/underscore',
                Backbone: '/javascripts/libs/backbone',
-               text:      '/javascripts/libs/text.js',
+               text:      '/javascripts/libs/text',
                Bootstrap: '/javascripts/libs/bootstrap',
                templates: '../templates'
            },
