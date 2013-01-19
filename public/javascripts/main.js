@@ -18,7 +18,11 @@ require.config({
           }
 });
 
-require(['Application']);
+require(['Application'], function(app) {
+    app.initialize();
+
+});
+
 
 
 
