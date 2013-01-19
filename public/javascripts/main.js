@@ -18,9 +18,8 @@ require.config({
           }
 });
 
-require(['Application'], function(app) {
+require(['Application']);
 
-});
 
 
 
