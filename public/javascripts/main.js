@@ -14,7 +14,7 @@ require.config({
     shim: {
               'Bootstrap': ['jQuery'],
               'Backbone' : ['jQuery', 'Underscore'],
-              'Application': ['Backbone']
+              'Application': ['Backbone', 'Bootstrap']
           }
 });
 
