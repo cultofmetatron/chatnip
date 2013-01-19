@@ -19,7 +19,7 @@ require.config({
 });
 
 require(['Application'], function(app) {
-    alert('hello');
+
 });
 
 

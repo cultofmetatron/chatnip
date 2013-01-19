@@ -5,7 +5,6 @@ var initialize = function() {
 
 }
 
-exports.initialize = initialize;
 
 
 
