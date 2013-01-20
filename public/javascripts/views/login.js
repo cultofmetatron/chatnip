@@ -14,6 +14,9 @@ define(['text!templates/login.html'], function(loginTemplate) {
             }).error( function() {
                 $('#error').text('unable to log in');
                 $('#error').slideDown();
+            }).success(function () {
+                window.location.hash = 'index';
+
             });
             return false;
         },

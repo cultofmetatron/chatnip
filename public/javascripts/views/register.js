@@ -14,6 +14,11 @@ define(['text!templates/register.html'], function(registerTemplate) {
 
             }, function(data) {
                 console.log(data);
+            }).error(function(err) {
+                $('#error').text('registration failed').slideDown();
+            }).success(function() {
+                window.location.hash = 'index';
+
             });
             return false;
         },
