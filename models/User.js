@@ -1,6 +1,6 @@
 /* a quick and dirty user model!! */
 
-module.exports = function(config, mongoose, nodemailer) {
+module.exports = function(mongoose) {
     //used for encryting the password
     var crypto = require('crypto');
 
@@ -9,7 +9,7 @@ module.exports = function(config, mongoose, nodemailer) {
         password: {type:String},
     })
 
-    var User = mongoose.model(UserSchema);
+    var User = mongoose.model('user', UserSchema);
 
     //echo to console success or failure
     var registerCallback = function(err) {
@@ -27,9 +27,8 @@ module.exports = function(config, mongoose, nodemailer) {
         console.log('Registering ' + username);
 
         var user = new User({
-            username:username
-            password:shaSum.digest('hex');
-
+            username:username,
+            password:shaSum.digest('hex')
         })
 
         user.save(registerCallback);
@@ -39,13 +38,13 @@ module.exports = function(config, mongoose, nodemailer) {
 
     var login = function(username, password, callback) {
         var shaSum = crypto.createHash('sha256');
-        shaSum.update('password');
-
+        shaSum.update(password);
+        console.log('logging in ' + username + " with password " + password);
         User.findOne({
             username: username,
             password: shaSum.digest('hex')
 
-        } function(err, doc) {
+        }, function(err, doc) {
             callback(null != doc);
         })
 

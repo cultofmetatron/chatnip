@@ -8,5 +8,6 @@
     , "socket.io":">= 0.9.13"
     , "underscore": ">= 0.0.0"
     , "mongoose": ">= 1.2.8"
+    , "connect": ">= 2.7.2"
   }
 }

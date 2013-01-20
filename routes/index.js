@@ -3,6 +3,7 @@
  * all the routes
  */
 
+
 exports.index = function(req, res){
   res.render('index', { title: 'Chatnip' })
 };
@@ -10,7 +11,6 @@ exports.index = function(req, res){
 
 exports.account_authenticated = function(req, res){
   //res.render('authenticated', { title: 'Chatnip' })
-
   if (req.session.loggedIn) {
       res.send(200);
   } else {
@@ -19,6 +19,7 @@ exports.account_authenticated = function(req, res){
 };
 
 // the registration page - POST
+/*
 exports.register = function(req, res) {
     var username = req.param('username', '');
     var password = req.param('password', null);
@@ -33,8 +34,9 @@ exports.register = function(req, res) {
 
 
 }
-
+*/
 //login
+/*
 exports.login = function(req, res) {
     console.log("login requested");
     var username = req.param('username', null);
@@ -56,7 +58,7 @@ exports.login = function(req, res) {
     });
 
 }
-
+*/
 
 
 
