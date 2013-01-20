@@ -17,6 +17,7 @@ define(['text!templates/register.html'], function(registerTemplate) {
             }).error(function(err) {
                 $('#error').text('registration failed').slideDown();
             }).success(function() {
+                $('#error').hide();
                 window.location.hash = 'index';
 
             });
