@@ -23,6 +23,7 @@ define(['views/index', 'views/register', 'views/login'],
             },
 
             index:function() {
+                console.log(IndexView);
                 this.changeView(new IndexView());
             },
 
