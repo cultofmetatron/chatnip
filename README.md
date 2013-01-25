@@ -12,5 +12,9 @@ connected chat program.
 The followeing user features exist
 
     *create handle
-    *join room
-    *talk to other people on the site
+
+   todos
+    1. make the view for the actual chat
+    2. data model for a chatroom - probably contains some kind hash to indicate the room.
+    3. each room has chat records
+    4.

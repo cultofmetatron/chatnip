@@ -2,8 +2,8 @@
 
 
 
-define(['views/index', 'views/register', 'views/login'],
-    function(IndexView, RegisterView, LoginView) {
+define(['views/index', 'views/register', 'views/login', 'views/chatroom'],
+    function(IndexView, RegisterView, LoginView, ChatroomView) {
         var SocialRouter = Backbone.Router.extend({
             currentView: null,
 
@@ -11,6 +11,7 @@ define(['views/index', 'views/register', 'views/login'],
                 'index':'index',
                 'login':'login',
                 'register':'register',
+                'chatroom':'chatroom'
             },
 
             changeView:function(view) {
@@ -33,7 +34,12 @@ define(['views/index', 'views/register', 'views/login'],
 
             register:function() {
                 this.changeView(new RegisterView());
+            },
+
+            chatroom: function() {
+                this.changeView(new ChatroomView());
             }
+
 
         });
 
