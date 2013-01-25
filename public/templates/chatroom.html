@@ -17,10 +17,44 @@
 //this code takes care of the chat part of the applicationby maintaining a persistent socket
     console.log('successfully loaded the chatroom view!!');
     var socket = io.connect('http://localhost:3000');
+ /*
     $('span.username').load('/session/username/', function(data) {
         console.log(data);
+        });
+        */
 
+    //note, this code doesn't work and yet the one right below works without flaw.
+    // definitly need to ask instructors wtf?
+
+    $.ajax({
+        url:'/session/username/',
+        type:'GET',
+        dataType:'json',
+        success:function(data) {
+            //$('span.username').text(data.username);
+            if (data) {
+                console.log('recieved data');
+                $('span.username').text(data.username);
+            }
+        },
+        error:function() {
+            //$(#error).text('error calling /session/username').fadeIn();
+        }
     });
+
+/*
+    $.ajax({
+        url: '/session/username/',
+        type: 'GET',
+        dataType: 'json' ,
+        success: function(data){console.log(data.username)},
+        error:function() {}
+    })
+
+*/
+
+
+
 
 
 
