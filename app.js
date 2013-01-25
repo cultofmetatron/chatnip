@@ -52,7 +52,26 @@ io.sockets.on('connection', function(socket) {
 // Routes
 
 app.get('/', routes.index);
-app.get('/account/authenticated', routes.account_authenticated);
+app.get('/account/authenticated', function(req, res) {
+    if (req.session.loggedIn) {
+        res.send(200);
+    } else {
+        res.send(401);
+    }
+});
+app.get('/session/username', function(req, res) {
+    // if user is not logged in, a 401 not authorized should be sent
+    console.log('/session/username recieved' )
+    if (req.session.loggedIn) {
+        console.log('requested username as ' + req.session.username)
+        res.writeHead(200, {'content-type':'text/json'})
+        res.write(JSON.stringify({username: req.session.username}))
+        res.end('\n');
+    } else {
+        res.send(401);
+
+    }
+})
 
 //registration
 app.post('/register', function(req, res) {
@@ -86,6 +105,7 @@ app.post('/login', function(req, res) {
         }
         console.log('login was successful');
         req.session.loggedIn = true;
+        req.session.username = username;
         res.send(200);
     });
 });

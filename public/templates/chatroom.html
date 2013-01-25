@@ -2,11 +2,25 @@
 <!-- can be found at public/javascripts/chatroom.js -->
 
 <script src='/socket.io/socket.io.js' type="text/javascript" charset="utf-8"></script>
+
+<ul id="console-window">
+    <li>Now entering thechatroom as <span class="username">undefined</span></li>
+</ul>
+
+
+
+
+
+
 <script type="text/javascript" language="javascript" charset="utf-8">
 //<![CDATA[
 //this code takes care of the chat part of the applicationby maintaining a persistent socket
     console.log('successfully loaded the chatroom view!!');
+    var socket = io.connect('http://localhost:3000');
+    $('span.username').load('/session/username/', function(data) {
+        console.log(data);
 
+    });
 
 
 
